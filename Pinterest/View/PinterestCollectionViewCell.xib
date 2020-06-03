@@ -10,30 +10,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PinterestCollectionViewCell" id="gTV-IL-0wX" customClass="PinterestCollectionViewCell" customModule="Pinterest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="121" height="184"/>
+            <rect key="frame" x="0.0" y="0.0" width="99" height="153"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="121" height="184"/>
+                <rect key="frame" x="0.0" y="0.0" width="99" height="153"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h7t-n6-Quf">
-                        <rect key="frame" x="0.0" y="0.0" width="121" height="184"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPy-x3-aI5">
+                        <rect key="frame" x="0.0" y="0.0" width="99" height="153"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h7t-n6-Quf">
+                                <rect key="frame" x="0.0" y="0.0" width="99" height="132.5"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdf-KW-Cb6">
+                                <rect key="frame" x="0.0" y="132.5" width="99" height="20.5"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pdf-KW-Cb6" secondAttribute="bottom" id="4nL-La-VLt"/>
+                            <constraint firstItem="h7t-n6-Quf" firstAttribute="leading" secondItem="YPy-x3-aI5" secondAttribute="leading" id="JPH-l2-aHm"/>
+                            <constraint firstItem="pdf-KW-Cb6" firstAttribute="leading" secondItem="YPy-x3-aI5" secondAttribute="leading" id="O5b-SQ-RYf"/>
+                            <constraint firstAttribute="trailing" secondItem="h7t-n6-Quf" secondAttribute="trailing" id="PEm-9r-Qyn"/>
+                            <constraint firstAttribute="trailing" secondItem="pdf-KW-Cb6" secondAttribute="trailing" id="ngS-MH-bge"/>
+                            <constraint firstItem="pdf-KW-Cb6" firstAttribute="top" secondItem="h7t-n6-Quf" secondAttribute="bottom" id="s1b-6b-Mqk"/>
+                            <constraint firstItem="h7t-n6-Quf" firstAttribute="top" secondItem="YPy-x3-aI5" secondAttribute="top" id="vdB-Pb-zGr"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="h7t-n6-Quf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AOW-wp-BAP"/>
-                <constraint firstAttribute="trailing" secondItem="h7t-n6-Quf" secondAttribute="trailing" id="Iba-RU-UBr"/>
-                <constraint firstAttribute="bottom" secondItem="h7t-n6-Quf" secondAttribute="bottom" id="fgK-aw-hSh"/>
-                <constraint firstItem="h7t-n6-Quf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xIv-8g-enW"/>
+                <constraint firstItem="YPy-x3-aI5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5nh-6c-Y4k"/>
+                <constraint firstAttribute="bottom" secondItem="YPy-x3-aI5" secondAttribute="bottom" id="8Mc-53-64T"/>
+                <constraint firstAttribute="trailing" secondItem="YPy-x3-aI5" secondAttribute="trailing" id="9eK-lz-aHk"/>
+                <constraint firstItem="YPy-x3-aI5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e1w-MQ-TiP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="121" height="184"/>
+            <size key="customSize" width="99" height="153"/>
             <connections>
+                <outlet property="descriptionLabel" destination="pdf-KW-Cb6" id="CCT-a1-B5g"/>
                 <outlet property="imageView" destination="h7t-n6-Quf" id="b4S-mQ-l8i"/>
             </connections>
-            <point key="canvasLocation" x="189.13043478260872" y="85.714285714285708"/>
+            <point key="canvasLocation" x="-247.10144927536234" y="18.415178571428569"/>
         </collectionViewCell>
     </objects>
 </document>

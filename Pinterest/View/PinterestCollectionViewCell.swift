@@ -10,8 +10,11 @@ import UIKit
 
 class PinterestCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    /// updates the view when each time property value is set
     var imageDetails : ImageData? {
         didSet {
+            descriptionLabel.text = imageDetails?.url.description
             imageView.image = nil
             imageView.loadImageUsingCache(withUrl: imageDetails?.downloadURL ?? "")
         }

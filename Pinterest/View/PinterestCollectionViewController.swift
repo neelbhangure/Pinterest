@@ -17,14 +17,21 @@ class PinterestCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        /// get arry of images to be shown in collection view
+       
         pinterestViewModel.getImageList()
+         ///  closure to be called on successfully data is retrieved from server
         pinterestViewModel.reloadData = {
             [weak self] in
             self?.collectionView.reloadData()
         }
     }
     
-
+    /**
+     sets the delegate as self if collectionViews layout is set as PinterestLayout ,
+     registers UICollectionView cell nib file for collection view cell.
+     
+     */
     fileprivate func setupCollectionView() {
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
@@ -42,6 +49,7 @@ extension PinterestCollectionViewController: UICollectionViewDelegateFlowLayout 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PinterestCollectionViewCell
         cell.imageView.image = nil
+        cell.descriptionLabel.text = nil
         cell.imageDetails = pinterestViewModel.imageList[indexPath.item]
         return cell
     }
