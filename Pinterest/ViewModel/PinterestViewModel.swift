@@ -20,9 +20,8 @@ class PinterestViewModel {
     func getImageList(completion :  ((Error?) -> ())? = nil) {
         
         ImageAPI.shared.getImageList(successHandler: { [weak self] (list) in
-            
-            
-//            self?.imageList = list
+                        
+            self?.imageList = list
             if let reloadData = self?.reloadData {
                 reloadData()
                 
